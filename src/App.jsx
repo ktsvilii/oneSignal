@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
-const APP_ID = import.meta.env.VITE_ONE_SIGNAL_APP_ID
-
+const APP_ID = import.meta.env.VITE_ONE_SIGNAL_APP_ID;
 
 function App() {
   useEffect(() => {
@@ -11,7 +10,6 @@ function App() {
       await OneSignal.init({
         appId: APP_ID,
         notifyButton: { enable: true },
-        allowLocalhostAsSecureOrigin: true, // важно для localhost
       });
     });
   }, []);
