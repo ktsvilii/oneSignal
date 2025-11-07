@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 const APP_ID = import.meta.env.VITE_ONE_SIGNAL_APP_ID;
+const SAFARI_APP_ID = import.meta.env.VITE_ONE_SIGNAL_APP_ID_SAFARI;
 
 function App() {
   useEffect(() => {
@@ -9,6 +10,7 @@ function App() {
     window.OneSignalDeferred.push(async function (OneSignal) {
       await OneSignal.init({
         appId: APP_ID,
+        safari_web_id: SAFARI_APP_ID,
         notifyButton: { enable: true },
       });
     });
